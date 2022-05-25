@@ -1,5 +1,5 @@
 // import React from 'react'
-import { Avatar, IconButton } from '@material-ui/core';
+import { Avatar, Button, IconButton } from '@material-ui/core';
 import styled from "styled-components";
 import ChatIcon from '@material-ui/icons/Chat';
 // import ChatIcon from '@mui/icons-material/Chat';
@@ -10,40 +10,63 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SearchIcon from '@material-ui/icons/Search';
 
 function Sidebar() {
-  return (
-    <Container>
-      <Header>
-        {/* <h1>this is the header</h1> */}
+    return (
+        <Container>
+            <Header>
+                {/* <h1>this is the header</h1> */}
 
-        <UserAvatar />
+                <UserAvatar />
 
-        <IconsContainer>
-          <IconButton>
-            <ChatIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
+                <IconsContainer>
+                    <IconButton>
+                        <ChatIcon />
+                    </IconButton>
+                    <IconButton>
+                        <MoreVertIcon />
+                    </IconButton>
 
 
-        </IconsContainer>
+                </IconsContainer>
 
-      </Header>
+            </Header>
 
-      <Search>
-        <SearchIcon />
-        <SearchInput />
-      </Search>
-    </Container>
-  )
+            <Search>
+                <SearchIcon />
+                <SearchInput placeholder="Search in chats" />
+            </Search>
+
+            <SidebarButton>Start a new chat</SidebarButton>
+
+            {/* List of Chats */}
+
+        </Container>
+    )
 }
 
 export default Sidebar;
 
 const Container = styled.div``;
 
-const Search = styled.div``;
-const SearchInput = styled.input``;
+const Search = styled.div`
+    display:flex;
+    align-items:center;
+    padding:20px;
+    border-radius:2px;
+`;
+
+const SidebarButton = styled(Button)`
+width:100%;
+&&&& {
+    border-top:1px solid whitesmoke;
+    border-bottom:1px solid whitesmoke;
+}
+`;
+
+const SearchInput = styled.input`
+outline-width:0;
+border:none;
+flex:1;
+`;
 
 const Header = styled.div`
 display:flex;
