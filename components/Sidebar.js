@@ -10,6 +10,18 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SearchIcon from '@material-ui/icons/Search';
 
 function Sidebar() {
+
+    const createChart = () => {
+        const input = prompt('Please enter an email address for the user you wish to chat with');
+
+        if (!input) return null;
+
+        if (EmailValidator.validate(input)) {
+            // We need to add the chat into the DB 'chats' collection
+        }
+
+    }
+
     return (
         <Container>
             <Header>
@@ -35,7 +47,7 @@ function Sidebar() {
                 <SearchInput placeholder="Search in chats" />
             </Search>
 
-            <SidebarButton>Start a new chat</SidebarButton>
+            <SidebarButton onClick={createChart}>Start a new chat</SidebarButton>
 
             {/* List of Chats */}
 
@@ -56,7 +68,7 @@ const Search = styled.div`
 
 const SidebarButton = styled(Button)`
 width:100%;
-&&&& {
+&&& {
     border-top:1px solid whitesmoke;
     border-bottom:1px solid whitesmoke;
 }
